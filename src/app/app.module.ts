@@ -12,6 +12,7 @@ import 'hammerjs';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireOfflineModule } from 'angularfire2-offline';
 import { firebaseConfig } from '../app/firebase.config';
+import { AuthService } from './providers/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { firebaseConfig } from '../app/firebase.config';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireOfflineModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
