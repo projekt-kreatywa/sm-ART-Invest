@@ -6,6 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import 'hammerjs';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireOfflineModule } from 'angularfire2-offline';
+import { firebaseConfig } from '../app/firebase.config';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +21,11 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule.forRoot(),
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireOfflineModule
   ],
   providers: [],
   bootstrap: [AppComponent]
